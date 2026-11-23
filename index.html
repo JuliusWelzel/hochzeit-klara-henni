@@ -3,47 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Klara &amp; Henni – Anpfiff 05.11.2027</title>
-  <meta name="description" content="Klara und Henni heiraten. Anpfiff am 05.11.2027 um 16 Uhr bei Bauer Kammesheidt in Essen.">
+  <title>Klara &amp; Henni heiraten – 05.11.2027</title>
+  <meta name="description" content="Klara und Henni heiraten am 05.11.2027 um 16 Uhr bei Bauer Kammesheidt in Essen.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Magazin-Cover -->
-  <header class="cover" id="anpfiff">
-    <img class="cover__bg" src="img/ringe.jpg" alt="Zwei gehämmerte goldene Eheringe auf weißem Stoff" width="1046" height="718">
+  <!-- Cover -->
+  <header class="cover" id="start">
+    <img class="cover__bg" src="img/ringe.jpg" alt="Zwei goldene Eheringe" width="1046" height="718">
     <div class="cover__shade"></div>
 
     <div class="cover__top">
-      <div class="cover__logo"><span class="logo__num">2</span><span class="logo__word">Freunde</span></div>
-      <div class="cover__issue">
-        <span>Magazin für Liebeskultur</span>
-        <span>Nr. 1 · November 2027</span>
-        <span>Preis: ein Lächeln</span>
-      </div>
+      <p class="cover__issue">Nr. 1 · November 2027</p>
+      <div class="logo cover__logo">Freund<span>innen</span></div>
     </div>
 
-    <div class="cover__lines cover__lines--left">
-      <p><b>Spielort</b>Festscheune statt Flutlicht: Ein Hof über dem Ruhrtal</p>
-      <p><b>Auswärtsfahrt</b>Wo die Fans übernachten</p>
-      <p><b>Kader</b>Wer steht im Aufgebot? Die Nominierung folgt</p>
-    </div>
+    <ul class="cover__lines">
+      <li><b>Doppelspitze</b>Zwei Frauen, ein Team</li>
+      <li><b>Heimspiel</b>Wir feiern in Essen</li>
+      <li><b>Fankurve</b>Ohne euch geht's nicht</li>
+    </ul>
 
     <div class="cover__sticker">
       <span>Exklusiv</span>
-      <strong>Der Transfer des Jahres!</strong>
+      <strong>Die Zukunft ist weiblich!</strong>
     </div>
 
     <div class="cover__main">
-      <p class="cover__kicker">Titelgeschichte</p>
-      <h1 class="headline">Klara <span class="amp">&amp;</span> Henni</h1>
-      <p class="cover__sub">„Ein Leben lang Heimspiel“ – sie sagen Ja, ihr seid die Fankurve.</p>
+      <p class="cover__kicker">Titelstory</p>
+      <h1 class="headline">Klara <span>&amp;</span> Henni</h1>
+      <p class="cover__sub">Wir heiraten – feiert mit uns!</p>
       <div class="cover__date">
         <span class="cover__datebig">05.11.2027</span>
-        <span class="cover__datesmall">Freitag · Anpfiff 16:00 Uhr<br>Bauer Kammesheidt, Essen</span>
+        <span class="cover__datesmall">Freitag · 16 Uhr<br>Bauer Kammesheidt, Essen</span>
       </div>
     </div>
 
@@ -54,15 +50,14 @@
   </header>
 
   <nav class="nav">
-    <a href="#anpfiff">Anpfiff</a>
-    <a href="#spielort">Spielort</a>
-    <a href="#uebernachtung">Auswärtsfahrt</a>
-    <a href="#kader">Kader</a>
+    <a href="#wann-wo">Wann &amp; wo</a>
+    <a href="#hotels">Hotels</a>
+    <a href="#zusagen">Zusagen</a>
   </nav>
 
-  <section class="countdown-wrap" aria-label="Countdown bis zum Anpfiff">
+  <section class="countdown-wrap" aria-label="Countdown bis zur Hochzeit">
     <span class="countdown__label">Noch bis zum Anpfiff</span>
-    <div class="countdown" aria-live="polite">
+    <div class="countdown">
       <div><b id="cd-days">–</b><span>Tage</span></div>
       <div><b id="cd-hours">–</b><span>Std.</span></div>
       <div><b id="cd-mins">–</b><span>Min.</span></div>
@@ -70,122 +65,108 @@
     </div>
   </section>
 
-  <!-- Ticker -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker__track">
-      <span>+++ 05.11.2027 +++ Anpfiff 16 Uhr +++ Bauer Kammesheidt, Essen +++ Zimmer früh buchen +++ Anmeldung folgt +++</span>
-      <span>+++ 05.11.2027 +++ Anpfiff 16 Uhr +++ Bauer Kammesheidt, Essen +++ Zimmer früh buchen +++ Anmeldung folgt +++</span>
+      <span>+++ 05.11.2027 +++ 16 Uhr +++ Bauer Kammesheidt, Essen +++ Zwei Frauen, ein Team +++</span>
+      <span>+++ 05.11.2027 +++ 16 Uhr +++ Bauer Kammesheidt, Essen +++ Zwei Frauen, ein Team +++</span>
     </div>
   </div>
 
   <main>
 
-    <!-- Spielort -->
-    <section class="section" id="spielort">
-      <div class="section__head">
-        <span class="section__num">01</span>
-        <h2>Der Spielort</h2>
-      </div>
+    <!-- 01 Wann & wo -->
+    <section class="section" id="wann-wo">
+      <div class="section__inner">
+        <h2 class="section__head"><span class="section__num">01</span> Wann &amp; wo</h2>
 
-      <div class="grid-2">
-        <article class="article">
-          <p class="kicker">Reportage</p>
-          <h3 class="article__title">Festscheune statt Flutlicht</h3>
-          <p class="lead">Gefeiert wird auf dem Hof von <strong>Bauer Kammesheidt</strong> in Essen-Schuir – zwischen Feldern und Wiesen, mit Blick über das Ruhrtal.</p>
-          <p>Der Familienhof wird seit sieben Generationen bewirtschaftet. Statt Stadion gibt es eine Festscheune, statt Rasenheizung Angus-Rinder auf der Weide. Bessere Bedingungen für ein Heimspiel hätten wir uns nicht wünschen können.</p>
-        </article>
+        <div class="facts">
+          <div class="fact">
+            <span class="fact__label">Freitag</span>
+            <span class="fact__value">05.11.2027</span>
+          </div>
+          <div class="fact">
+            <span class="fact__label">Anpfiff</span>
+            <span class="fact__value">16 Uhr</span>
+          </div>
+          <div class="fact fact--wide">
+            <span class="fact__label">Ort</span>
+            <span class="fact__value">Bauer Kammesheidt</span>
+            <span class="fact__note">Kamisheide 50, 45133 Essen. Ein Bauernhof über dem Ruhrtal.</span>
+          </div>
+        </div>
 
-        <aside class="factbox">
-          <h4>Daten &amp; Fakten</h4>
-          <dl>
-            <dt>Ort</dt>
-            <dd>Bauer Kammesheidt<br>Kamisheide 50<br>45133 Essen-Schuir</dd>
-            <dt>Datum</dt>
-            <dd>Freitag, 05.11.2027</dd>
-            <dt>Anstoß</dt>
-            <dd>16:00 Uhr</dd>
-            <dt>Web</dt>
-            <dd><a href="https://kammesheidt.de" target="_blank" rel="noopener">kammesheidt.de</a></dd>
-          </dl>
-          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bauer+Kammesheidt+Kamisheide+50+45133+Essen" target="_blank" rel="noopener">Route planen →</a>
-        </aside>
+        <div class="buttons">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bauer+Kammesheidt+Kamisheide+50+45133+Essen" target="_blank" rel="noopener">Route planen →</a>
+          <a class="btn btn--ghost" href="https://kammesheidt.de" target="_blank" rel="noopener">Zum Hof →</a>
+        </div>
       </div>
     </section>
 
-    <!-- Übernachtung -->
-    <section class="section section--dark" id="uebernachtung">
-      <div class="section__head">
-        <span class="section__num">02</span>
-        <h2>Die Auswärtsfahrt</h2>
-      </div>
-      <p class="lead lead--wide">Ihr reist von weiter her an? Hier eine Auswahl an Unterkünften rund um den Spielort. Der Hof selbst bietet keine Zimmer an. <strong>Tipp:</strong> Bucht früh – Anfang November finden in der Messe Essen oft Veranstaltungen statt.</p>
+    <!-- 02 Hotels -->
+    <section class="section section--red" id="hotels">
+      <div class="section__inner">
+        <h2 class="section__head"><span class="section__num">02</span> Hotels</h2>
+        <p class="intro">Der Hof hat keine Zimmer. Diese Hotels sind in der Nähe. Am besten früh buchen!</p>
 
-      <div class="cards">
-        <article class="card">
-          <span class="card__tag">Kettwig · ca. 5 km</span>
-          <h3>Schloss Hugenpoet</h3>
-          <p>Wasserschloss an der Ruhr. Die Luxusvariante für alle, die das Wochenende verlängern wollen.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Hugenpoet+Essen" target="_blank" rel="noopener">Auf Karte zeigen →</a>
-        </article>
-        <article class="card">
-          <span class="card__tag">Kettwig · ca. 5 km</span>
-          <h3>Landhaus Knappmann</h3>
-          <p>Kleines, familiäres Hotel in Kettwig mit sehr guten Bewertungen.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Landhaus+Knappmann+Essen+Kettwig" target="_blank" rel="noopener">Auf Karte zeigen →</a>
-        </article>
-        <article class="card">
-          <span class="card__tag">Kettwig · ca. 5 km</span>
-          <h3>Hotel Jägerhof &amp; Hotel Zur Flora</h3>
-          <p>Zwei bodenständige Häuser in der hübschen Kettwiger Altstadt.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Hotels+Essen+Kettwig" target="_blank" rel="noopener">Auf Karte zeigen →</a>
-        </article>
-        <article class="card">
-          <span class="card__tag">Werden · ca. 5 km</span>
-          <h3>Hotel Rutherbach</h3>
-          <p>Ruhig gelegen im Süden von Essen, nicht weit vom Hof.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Rutherbach+Essen" target="_blank" rel="noopener">Auf Karte zeigen →</a>
-        </article>
-        <article class="card">
-          <span class="card__tag">Bredeney · ca. 5 km</span>
-          <h3>Hotel Bredeney</h3>
-          <p>Großes 4-Sterne-Haus mit vielen Zimmern. Gut, wenn mehrere von euch zusammen buchen.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bredeney+Essen" target="_blank" rel="noopener">Auf Karte zeigen →</a>
-        </article>
-        <article class="card">
-          <span class="card__tag">Margarethenhöhe · ca. 8 km</span>
-          <h3>Mintrops Stadt Hotel</h3>
-          <p>4 Sterne in der denkmalgeschützten Gartenstadt Margarethenhöhe.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Mintrops+Stadt+Hotel+Margarethenh%C3%B6he+Essen" target="_blank" rel="noopener">Auf Karte zeigen →</a>
-        </article>
-      </div>
+        <table class="table">
+          <thead>
+            <tr><th>#</th><th>Hotel</th><th><span class="sr-only">Karte</span></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="table__name">Schloss Hugenpoet<small>Kettwig</small></td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Schloss+Hugenpoet+Essen" target="_blank" rel="noopener">Karte →</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="table__name">Landhaus Knappmann<small>Kettwig</small></td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Landhaus+Knappmann+Essen+Kettwig" target="_blank" rel="noopener">Karte →</a></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="table__name">Hotel Jägerhof<small>Kettwig</small></td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+J%C3%A4gerhof+Essen+Kettwig" target="_blank" rel="noopener">Karte →</a></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="table__name">Hotel Rutherbach<small>Werden</small></td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Rutherbach+Essen" target="_blank" rel="noopener">Karte →</a></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="table__name">Hotel Bredeney<small>Bredeney</small></td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Bredeney+Essen" target="_blank" rel="noopener">Karte →</a></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="table__name">Mintrops Stadt Hotel<small>Margarethenhöhe</small></td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Mintrops+Stadt+Hotel+Margarethenh%C3%B6he+Essen" target="_blank" rel="noopener">Karte →</a></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <div class="tip">
-        <strong>Weitere Optionen</strong>
-        <p>Rund um die Messe Essen (Rüttenscheid) und in der Essener Innenstadt gibt es viele weitere Hotels. Auch Ferienwohnungen in Kettwig und Werden sind eine gute Wahl für Gruppen.</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Hotels+in+der+N%C3%A4he+von+Kamisheide+50+45133+Essen" target="_blank" rel="noopener">Alle Hotels in der Umgebung auf der Karte →</a>
+        <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=Hotels+in+der+N%C3%A4he+von+Kamisheide+50+45133+Essen" target="_blank" rel="noopener">Alle Hotels in der Nähe auf der Karte →</a>
       </div>
     </section>
 
-    <!-- Kader / RSVP -->
-    <section class="section" id="kader">
-      <div class="section__head">
-        <span class="section__num">03</span>
-        <h2>Kadernominierung</h2>
-      </div>
-      <div class="rsvp-teaser">
-        <p class="kicker">Demnächst</p>
-        <h3 class="article__title">Seid ihr im Aufgebot?</h3>
-        <p>Bald könnt ihr hier zusagen, angeben, mit wie vielen Personen ihr kommt und ob ihr besondere Essenswünsche habt (z. B. vegetarisch, vegan, Allergien). Bis dahin: <strong>Datum blocken!</strong></p>
-        <div class="stamp">Save the Date</div>
+    <!-- 03 Zusagen -->
+    <section class="section" id="zusagen">
+      <div class="section__inner">
+        <h2 class="section__head"><span class="section__num">03</span> Zusagen</h2>
+        <div class="rsvp">
+          <p>Bald könnt ihr hier zusagen – mit Personenzahl und Essenswünschen.</p>
+          <p><strong>Bis dahin: Datum freihalten!</strong></p>
+          <div class="stamp">Save the Date</div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="footer__logo"><span class="logo__num">2</span><span class="logo__word">Freunde</span></div>
+    <div class="logo footer__logo">Freund<span>innen</span></div>
     <p>Klara &amp; Henni · 05.11.2027 · Essen</p>
-    <p class="footer__small">Herausgegeben mit Liebe. Für Fragen meldet euch direkt bei uns.</p>
   </footer>
 
   <script src="script.js"></script>
