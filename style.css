@@ -1,7 +1,7 @@
-/* Farben angelehnt an Rot-Weiss Essen */
+/* Farben: Weinrot und Creme */
 :root {
-  --red: #e1001e;
-  --white: #fff;
+  --red: #7f011f;
+  --white: #f5ebd0;
   --ink: #1a1a1a;
   --display: "Anton", Impact, sans-serif;
   --cond: "Oswald", "Arial Narrow", sans-serif;
@@ -285,7 +285,7 @@ a { color: inherit; }
 }
 .table td {
   padding: 14px 10px;
-  border-bottom: 1px solid rgba(255,255,255,.5);
+  border-bottom: 1px solid rgba(245,235,208,.5);
   vertical-align: middle;
 }
 .table td:first-child { width: 1%; padding-right: 20px; font: 400 30px/1 var(--display); }
@@ -305,7 +305,7 @@ a { color: inherit; }
   letter-spacing: .08em;
   white-space: nowrap;
 }
-.table tbody tr:hover { background: rgba(255,255,255,.1); }
+.table tbody tr:hover { background: rgba(245,235,208,.1); }
 .more {
   display: inline-block;
   margin-top: 24px;
@@ -369,4 +369,14 @@ a { color: inherit; }
   .table td { padding: 12px 6px; }
   .table td:first-child { font-size: 24px; padding-right: 10px; }
   .stamp { font-size: 20px; }
+}
+
+/* Weinrote "2" und "&" auf dem dunklen Foto mit Creme-Kontur lesbar machen */
+.cover__logo span, .headline span {
+  --o: .03em;
+  text-shadow:
+    var(--o) 0 0 var(--white), calc(var(--o) * -1) 0 0 var(--white),
+    0 var(--o) 0 var(--white), 0 calc(var(--o) * -1) 0 var(--white),
+    var(--o) var(--o) 0 var(--white), calc(var(--o) * -1) var(--o) 0 var(--white),
+    var(--o) calc(var(--o) * -1) 0 var(--white), calc(var(--o) * -1) calc(var(--o) * -1) 0 var(--white);
 }
