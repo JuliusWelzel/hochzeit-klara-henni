@@ -1,6 +1,6 @@
-// Countdown bis zum Anpfiff: 05.11.2027, 16:00 Uhr (MEZ, UTC+1)
+// Countdown bis zum Hochzeitstag: 05.11.2027 (MEZ, UTC+1)
 (function () {
-  var target = new Date("2027-11-05T16:00:00+01:00").getTime();
+  var target = new Date("2027-11-05T00:00:00+01:00").getTime();
   var el = {
     d: document.getElementById("cd-days"),
     h: document.getElementById("cd-hours"),
