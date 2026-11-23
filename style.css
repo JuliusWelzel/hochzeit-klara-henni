@@ -173,51 +173,6 @@ a { color: inherit; }
 }
 .nav a:hover { background: var(--red); color: var(--white); }
 
-/* ---------- COUNTDOWN ---------- */
-.countdown-wrap {
-  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-  gap: 10px 32px;
-  padding: 24px 16px;
-  background: var(--red);
-  color: var(--white);
-}
-.countdown__label {
-  font: 700 16px/1 var(--cond);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-}
-.countdown { display: flex; gap: 10px; }
-.countdown div {
-  min-width: 74px;
-  padding: 6px 10px 4px;
-  background: var(--white);
-  color: var(--red);
-  text-align: center;
-}
-.countdown b { display: block; font: 400 40px/1 var(--display); }
-.countdown span {
-  font: 700 12px/1.4 var(--cond);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--ink);
-}
-
-/* ---------- TICKER ---------- */
-.ticker {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px 0;
-  border-bottom: 4px solid var(--red);
-  color: var(--red);
-  font: 700 15px/1.4 var(--cond);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-.ticker__track { display: inline-flex; animation: ticker 30s linear infinite; }
-.ticker__track span { padding-right: 2em; }
-@keyframes ticker { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .ticker__track { animation: none; } }
-
 /* ---------- SECTIONS ---------- */
 .section { padding: clamp(48px, 8vw, 96px) 16px; scroll-margin-top: 50px; }
 .section__inner { max-width: 1100px; margin: 0 auto; }
@@ -341,8 +296,6 @@ a { color: inherit; }
 @media (max-width: 640px) {
   body { font-size: 18px; }
   .nav a { padding: 12px 12px; font-size: 14px; }
-  .countdown div { min-width: 62px; }
-  .countdown b { font-size: 30px; }
   .table__name { font-size: 19px; }
   .table td { padding: 12px 6px; }
   .table td:first-child { font-size: 24px; padding-right: 10px; }
