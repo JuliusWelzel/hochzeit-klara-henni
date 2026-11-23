@@ -36,7 +36,7 @@ a { color: inherit; }
 
 /* ---------- COVER ---------- */
 .cover {
-  --logo: clamp(56px, min(16.5vw, 22vh), 210px);
+  --logo: clamp(50px, min(14.5vw, 22vh), 210px);
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
@@ -93,23 +93,6 @@ a { color: inherit; }
   font: 400 28px/1.1 var(--display);
   text-shadow: none;
 }
-
-.cover__sticker {
-  position: absolute; z-index: 2;
-  right: clamp(16px, 6vw, 90px);
-  top: calc(var(--logo) * .85 + 80px);
-  width: 150px; height: 150px;
-  border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 6px 20px rgba(0,0,0,.35), inset 0 0 0 6px var(--red), inset 0 0 0 8px var(--white);
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  padding: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  transform: rotate(10deg);
-}
-.cover__sticker span { font: 700 12px/1.4 var(--cond); letter-spacing: .15em; }
-.cover__sticker strong { font: 400 21px/1.05 var(--display); }
 
 .cover__main { align-self: end; }
 .cover__kicker {
@@ -359,7 +342,7 @@ a { color: inherit; }
   border-top: 8px solid var(--red);
   text-align: center;
 }
-.footer__logo { font-size: clamp(44px, 9vw, 72px); }
+.footer__logo { font-size: clamp(40px, 8vw, 72px); }
 .footer p {
   margin: 12px 0 0;
   font: 700 14px/1.4 var(--cond);
@@ -368,6 +351,9 @@ a { color: inherit; }
 }
 
 /* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .cover__barcode { display: none; }
+}
 @media (max-width: 760px) {
   .facts { grid-template-columns: 1fr 1fr; }
   .fact--wide { grid-column: 1 / -1; }
@@ -376,8 +362,6 @@ a { color: inherit; }
   body { font-size: 18px; }
   .cover__lines, .cover__barcode { display: none; }
   .cover__issue { font-size: 11px; }
-  .cover__sticker { width: 116px; height: 116px; padding: 14px; }
-  .cover__sticker strong { font-size: 16px; }
   .nav a { padding: 12px 12px; font-size: 14px; }
   .countdown div { min-width: 62px; }
   .countdown b { font-size: 30px; }
