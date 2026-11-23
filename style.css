@@ -1,8 +1,9 @@
-/* Farben: Weinrot und Creme */
+/* Farbpalette: Cotton, Cherry Red, Maroon, Noir Black */
 :root {
-  --red: #7f011f;
-  --white: #f5ebd0;
-  --ink: #1a1a1a;
+  --red: #810100;
+  --maroon: #630000;
+  --white: #edebdd;
+  --ink: #1b1717;
   --display: "Anton", Impact, sans-serif;
   --cond: "Oswald", "Arial Narrow", sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
@@ -35,14 +36,19 @@ a { color: inherit; }
 .logo span { color: var(--red); }
 
 /* ---------- COVER ---------- */
+/* Auf breiten Bildschirmen: Cover als Hochformat-Magazinseite in der Mitte */
+.cover-wrap { display: flex; justify-content: center; background: var(--maroon); }
 .cover {
-  --logo: clamp(50px, min(14.5vw, 22vh), 210px);
+  container-type: inline-size;
+  --logo: 14.5cqw;
   position: relative;
+  width: min(100%, 76vh);
+  width: min(100%, 76svh);
   min-height: 100vh;
   min-height: 100svh;
   overflow: hidden;
   color: var(--white);
-  background: #2a2318;
+  background: var(--ink);
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 20px;
@@ -52,7 +58,7 @@ a { color: inherit; }
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 50% 60%;
+  object-position: 0% 40%;
 }
 .cover__shade {
   position: absolute; inset: 0;
@@ -80,6 +86,8 @@ a { color: inherit; }
   list-style: none;
   margin: 0; padding: 0;
   align-self: start;
+  justify-self: end;
+  text-align: right;
   font: 500 17px/1.25 var(--cond);
   text-transform: uppercase;
   text-shadow: 0 1px 6px rgba(0,0,0,.7);
@@ -87,6 +95,7 @@ a { color: inherit; }
 .cover__lines li { margin-bottom: 16px; }
 .cover__lines b {
   display: table;
+  margin-left: auto;
   margin-bottom: 4px;
   padding: 3px 8px 0;
   background: var(--red);
@@ -106,14 +115,14 @@ a { color: inherit; }
 }
 .headline {
   margin: 0;
-  font: 400 clamp(60px, min(13vw, 16vh), 190px)/.86 var(--display);
+  font: 400 13cqw/.86 var(--display);
   text-transform: uppercase;
   text-shadow: 0 4px 30px rgba(0,0,0,.4);
 }
 .headline span { color: var(--red); }
 .cover__sub {
   margin: 12px 0 18px;
-  font-size: clamp(20px, 2.4vw, 28px);
+  font-size: clamp(18px, 4cqw, 28px);
   font-weight: 600;
 }
 .cover__date { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 18px; }
@@ -121,10 +130,10 @@ a { color: inherit; }
   background: var(--white);
   color: var(--red);
   padding: 4px 16px 0;
-  font: 400 clamp(44px, min(9vw, 10vh), 120px)/1 var(--display);
+  font: 400 9cqw/1 var(--display);
 }
 .cover__datesmall {
-  font: 700 clamp(16px, 1.8vw, 22px)/1.3 var(--cond);
+  font: 700 clamp(14px, 2.8cqw, 22px)/1.3 var(--cond);
   text-transform: uppercase;
   letter-spacing: .04em;
 }
@@ -212,7 +221,7 @@ a { color: inherit; }
 /* ---------- SECTIONS ---------- */
 .section { padding: clamp(48px, 8vw, 96px) 16px; scroll-margin-top: 50px; }
 .section__inner { max-width: 1100px; margin: 0 auto; }
-.section--red { background: var(--red); color: var(--white); }
+.section--red { background: var(--maroon); color: var(--white); }
 
 .section__head {
   display: flex; align-items: baseline; gap: 16px;
@@ -285,7 +294,7 @@ a { color: inherit; }
 }
 .table td {
   padding: 14px 10px;
-  border-bottom: 1px solid rgba(245,235,208,.5);
+  border-bottom: 1px solid rgba(237,235,221,.5);
   vertical-align: middle;
 }
 .table td:first-child { width: 1%; padding-right: 20px; font: 400 30px/1 var(--display); }
@@ -305,7 +314,7 @@ a { color: inherit; }
   letter-spacing: .08em;
   white-space: nowrap;
 }
-.table tbody tr:hover { background: rgba(245,235,208,.1); }
+.table tbody tr:hover { background: rgba(237,235,221,.1); }
 .more {
   display: inline-block;
   margin-top: 24px;
@@ -338,11 +347,25 @@ a { color: inherit; }
 
 /* ---------- FOOTER ---------- */
 .footer {
-  padding: 44px 16px;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(72px, 12vw, 140px) 16px;
+  color: var(--white);
   border-top: 8px solid var(--red);
   text-align: center;
 }
-.footer__logo { font-size: clamp(40px, 8vw, 72px); }
+.footer__bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+.footer::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(27,23,23,.75), rgba(27,23,23,.35));
+}
+.footer__content { position: relative; z-index: 1; }
+.footer__logo { font-size: clamp(44px, 9vw, 88px); text-shadow: 0 3px 24px rgba(0,0,0,.4); }
 .footer p {
   margin: 12px 0 0;
   font: 700 14px/1.4 var(--cond);
@@ -351,8 +374,12 @@ a { color: inherit; }
 }
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 900px) {
+@container (max-width: 760px) {
   .cover__barcode { display: none; }
+}
+@container (max-width: 480px) {
+  .cover__lines { display: none; }
+  .cover__issue { font-size: 11px; }
 }
 @media (max-width: 760px) {
   .facts { grid-template-columns: 1fr 1fr; }
@@ -360,8 +387,6 @@ a { color: inherit; }
 }
 @media (max-width: 640px) {
   body { font-size: 18px; }
-  .cover__lines, .cover__barcode { display: none; }
-  .cover__issue { font-size: 11px; }
   .nav a { padding: 12px 12px; font-size: 14px; }
   .countdown div { min-width: 62px; }
   .countdown b { font-size: 30px; }
@@ -372,7 +397,7 @@ a { color: inherit; }
 }
 
 /* Weinrote "2" und "&" auf dem dunklen Foto mit Creme-Kontur lesbar machen */
-.cover__logo span, .headline span {
+.cover__logo span, .headline span, .footer__logo span {
   --o: .03em;
   text-shadow:
     var(--o) 0 0 var(--white), calc(var(--o) * -1) 0 0 var(--white),
