@@ -196,7 +196,7 @@ a { color: inherit; }
 /* 01 Wann & wo */
 .facts {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 2fr;
   gap: 24px;
   margin-bottom: 32px;
 }
@@ -214,6 +214,7 @@ a { color: inherit; }
   font: 400 clamp(30px, 4.2vw, 52px)/1.05 var(--display);
   text-transform: uppercase;
 }
+.fact__value--small { font-size: clamp(20px, 2.2vw, 28px); line-height: 1.15; }
 .fact__note { display: block; margin-top: 6px; font-size: 17px; }
 
 .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
