@@ -1,5 +1,5 @@
 // Formular + Stadionticket auf <canvas>. Es wird nichts gesendet oder gespeichert.
-import { MEALS, summarizeMeals, seatFor, slugify, buildIcs } from './ticket-core.js';
+import { MEALS, summarizeMeals, seatFor, slugify } from './ticket-core.js';
 
 const C = {
   red: '#810100',
@@ -240,26 +240,24 @@ function download(blob, filename) {
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
-async function saveTicket() {
-  if (!current) return;
-  const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
-  if (!blob) return;
-  const filename = `ticket-${slugify(current.name)}.png`;
-  const file = new File([blob], filename, { type: 'image/png' });
-  const touch = window.matchMedia('(pointer: coarse)').matches;
-  if (touch && navigator.canShare && navigator.canShare({ files: [file] })) {
-    try {
-      await navigator.share({ files: [file], title: 'Ticket Klara & Henni' });
-      return;
-    } catch (e) {
-      if (e.name === 'AbortError') return;
-    }
-  }
-  download(blob, filename);
+// PNG schon beim Zeichnen erzeugen: navigator.share muss direkt im Tipp laufen (iOS Safari).
+function prepareFile(data) {
+  return new Promise(res => canvas.toBlob(blob => {
+    res(blob && new File([blob], `ticket-${slugify(data.name)}.png`, { type: 'image/png' }));
+  }, 'image/png'));
 }
 
-function saveIcs() {
-  download(new Blob([buildIcs()], { type: 'text/calendar;charset=utf-8' }), 'hochzeit-klara-henni.ics');
+function saveTicket() {
+  const file = current && current.file;
+  if (!file) return;
+  const touch = window.matchMedia('(pointer: coarse)').matches;
+  if (touch && navigator.canShare && navigator.canShare({ files: [file] })) {
+    // Abbrechen (AbortError) ist ok; bei anderen Fehlern doch herunterladen.
+    navigator.share({ files: [file], title: 'Ticket Klara & Henni' })
+      .catch(e => { if (e.name !== 'AbortError') download(file, file.name); });
+    return;
+  }
+  download(file, file.name);
 }
 
 // ---------- Ablauf ----------
@@ -274,9 +272,10 @@ form.addEventListener('submit', async e => {
   }
   nameError.hidden = true;
   form.elements.name.removeAttribute('aria-invalid');
-  current = data;
   await fontsReady();
   drawTicket(canvas, data);
+  data.file = await prepareFile(data);
+  current = data;
   canvas.setAttribute('aria-label', `Ticket für ${data.name}, ${data.people} ${data.people === 1 ? 'Person' : 'Personen'}, ${summarizeMeals(data.meals)}`);
   form.hidden = true;
   ticketBox.hidden = false;
@@ -288,7 +287,6 @@ form.elements.name.addEventListener('input', () => {
 });
 peopleSel.addEventListener('change', renderMealFields);
 document.getElementById('ticket-save').addEventListener('click', saveTicket);
-document.getElementById('ticket-ics').addEventListener('click', saveIcs);
 document.getElementById('ticket-edit').addEventListener('click', () => {
   ticketBox.hidden = true;
   form.hidden = false;

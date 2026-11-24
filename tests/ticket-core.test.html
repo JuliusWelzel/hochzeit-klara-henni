@@ -47,6 +47,8 @@
       ok(ics.startsWith('BEGIN:VCALENDAR\r\n') && ics.endsWith('END:VCALENDAR\r\n'), 'Rahmen');
       ok(!/[^\r]\n/.test(ics), 'nur CRLF');
     });
+    const file = await fetch('../hochzeit-klara-henni.ics').then(r => r.ok ? r.text() : '(fehlt)');
+    test('statische ICS-Datei entspricht buildIcs()', () => eq(file, m.buildIcs()));
   } catch (e) {
     results.push(['FAIL', 'Modul laden — ' + e.message]);
   }
