@@ -26,7 +26,7 @@
     <ul class="cover__lines">
       <li><b>Heimspiel</b>Wir feiern in Essen</li>
       <li><b>Fankurve</b>Ohne euch geht's nicht</li>
-      <li><b>Tickets</b>Bald im Vorverkauf</li>
+      <li><a href="#tickets"><b>Tickets</b>Bald im Vorverkauf</a></li>
     </ul>
 
 
@@ -49,6 +49,7 @@
   <nav class="nav">
     <a href="#wann-wo">Wann &amp; wo</a>
     <a href="#hotels">Hotels</a>
+    <a href="#tickets">Tickets</a>
   </nav>
 
   <main>
@@ -129,7 +130,53 @@
       </div>
     </section>
 
+    <!-- 03 Tickets -->
+    <section class="section" id="tickets">
+      <div class="section__inner">
+        <h2 class="section__head"><span class="section__num">03</span> Tickets</h2>
+        <p class="intro">Holt euch euer Stadionticket – als Andenken für die Fotogalerie. Kein Einlass, keine Kontrolle, nur Vorfreude.</p>
+
+        <form class="ticket-form" id="ticket-form" novalidate>
+          <label class="field">
+            <span class="field__label">Name</span>
+            <input class="field__input" name="name" type="text" autocomplete="name" maxlength="60" required placeholder="Wer kommt?">
+            <span class="field__error" id="name-error" hidden>Bitte gib deinen Namen an.</span>
+          </label>
+
+          <label class="field field--short">
+            <span class="field__label">Personen</span>
+            <select class="field__input" name="people" id="people">
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6</option>
+            </select>
+          </label>
+
+          <fieldset class="field meals">
+            <legend class="field__label">Essen</legend>
+            <div class="meals__list" id="meals"></div>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__label">Allergien &amp; Unverträglichkeiten <small>(optional)</small></span>
+            <textarea class="field__input" name="allergies" rows="2" maxlength="120" placeholder="z. B. keine Nüsse"></textarea>
+          </label>
+
+          <button class="btn ticket-form__submit" type="submit">Ticket holen →</button>
+        </form>
+
+        <div class="ticket" id="ticket" hidden>
+          <canvas class="ticket__canvas" id="ticket-canvas" width="1200" height="560" role="img" aria-label="Dein Ticket"></canvas>
+          <div class="buttons">
+            <button class="btn" type="button" id="ticket-save">Ticket speichern</button>
+            <button class="btn btn--ghost" type="button" id="ticket-ics">In den Kalender</button>
+            <button class="btn btn--ghost" type="button" id="ticket-edit">Ändern</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <script type="module" src="ticket.js"></script>
 </body>
 </html>
